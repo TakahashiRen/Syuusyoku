@@ -201,6 +201,7 @@ void Game::CreateDeviceDependentResources()
 	EffectFactory fx(device);
 	// モデルのテクスチャの入っているフォルダを指定する
 	fx.SetDirectory(L"Resources\\Models");
+
 	//プレイヤーモデルの作成
 	m_modelPlayer = Model::CreateFromCMO(device, L"Resources\\Models\\Vehecle.cmo", fx);
 }

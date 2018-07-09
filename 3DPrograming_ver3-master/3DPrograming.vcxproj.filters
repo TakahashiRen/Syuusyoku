@@ -52,7 +52,10 @@
     <ClInclude Include="GridFloor.h">
       <Filter>System Header</Filter>
     </ClInclude>
-    <ClInclude Include="Obj3D.h">
+    <ClInclude Include="Game\ObjParts.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Obj3D.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
@@ -78,7 +81,10 @@
     <ClCompile Include="GridFloor.cpp">
       <Filter>System Source</Filter>
     </ClCompile>
-    <ClCompile Include="Obj3D.cpp">
+    <ClCompile Include="Game\ObjParts.cpp">
+      <Filter>Header</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Obj3D.cpp">
       <Filter>Header</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,8 +102,8 @@
     </Manifest>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FBX\Vehecle.FBX">
-      <Filter>FBX</Filter>
-    </None>
+    <MeshContentTask Include="FBX\Vehecle.FBX">
+      <Filter>Assets</Filter>
+    </MeshContentTask>
   </ItemGroup>
 </Project>
