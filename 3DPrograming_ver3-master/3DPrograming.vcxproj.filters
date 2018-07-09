@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>c2d376cd-01d3-4161-ae70-8caf697a9abf</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>33d27b96-0970-45dd-ba5c-04a726dfdc18</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dds;dlg;fbx;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="FBX">
+      <UniqueIdentifier>{6ba0cabf-0dfc-497e-ac52-41fe30b10ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Header">
+      <UniqueIdentifier>{98aef7a3-85f2-4fff-b857-b0440bc7b3a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework Source">
+      <UniqueIdentifier>{f098f270-fd9a-4c45-9667-cd4e8ae9d8b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System Source">
+      <UniqueIdentifier>{71d00eed-fee4-466e-8649-6b33bf8cce16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{3ffbc941-cebb-4586-b819-ecefc8623393}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{a86e439c-664a-4736-97b0-85a5403c345f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System Header">
+      <UniqueIdentifier>{e3b7a806-8bd5-4c23-b122-636525652aff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StepTimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceResources.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Framework Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Framework Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>System Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugCamera.h">
+      <Filter>System Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridFloor.h">
+      <Filter>System Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Obj3D.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DeviceResources.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Framework Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Framework Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Framework Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>System Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugCamera.cpp">
+      <Filter>System Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GridFloor.cpp">
+      <Filter>System Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Obj3D.cpp">
+      <Filter>Header</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="directx.ico">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="settings.manifest">
+      <Filter>Assets</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FBX\Vehecle.FBX">
+      <Filter>FBX</Filter>
+    </None>
+  </ItemGroup>
+</Project>
