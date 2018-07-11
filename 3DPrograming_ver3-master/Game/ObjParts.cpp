@@ -4,41 +4,52 @@
 //---------------------------------------------------------------------
 #include "../pch.h"
 #include "Obj3D.h"
+#include "../Game.h"
+
 #include "ObjParts.h"
 
+using namespace DirectX;
+using namespace DirectX::SimpleMath;
+
 //
-//	コンストラクタ	
+//	コンストラクタ
 //
 ObjParts::ObjParts()
-	: m_obj(nullptr)
-{
-	m_child.resize(5);
-}
-
-//
-//	デストラクタ
-//
-ObjParts::~ObjParts()
+	: Obj3D()
 {
 }
 
 //
-//各パーツの初期位置行列を親の座標系に変換する関数
+//初期化関数
 //
-void ObjParts::SetupInitMatrix(ObjParts * parts, DirectX::SimpleMath::Matrix * parent)
+void ObjParts::Init()
 {
-	for (std::vector<ObjParts*>::iterator ite = m_child.begin(); ite != m_child.end(); ite++)
+}
+
+//
+//	初期化関数
+//
+void ObjParts::Start()
+{
+	m_world = m_initial;
+}
+
+//
+//	更新関数
+//
+bool ObjParts::Update(float elapsedTime)
+{
+	m_world = Matrix::CreateFromQuaternion(m_rotaiton) * Matrix::CreateTranslation(m_position);
+	return true;
+}
+
+//
+//	描画関数
+//
+void ObjParts::Render()
+{
+	if (m_model != nullptr && m_game != nullptr)
 	{
-		if (parent)
-		{
-			
-		}
+		m_model->Draw(m_game->GetContext(), *m_game->GetStates(), m_world, m_game->GetView(), m_game->GetProjection());
 	}
-}
-
-//
-//各パーツのワールド行列を更新する関数
-//
-void ObjParts::UpdateMatrix(ObjParts * parts, DirectX::SimpleMath::Matrix * parent)
-{
 }

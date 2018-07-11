@@ -43,20 +43,29 @@
     <ClInclude Include="Game.h">
       <Filter>Framework Header</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>System Header</Filter>
-    </ClInclude>
     <ClInclude Include="DebugCamera.h">
       <Filter>System Header</Filter>
     </ClInclude>
     <ClInclude Include="GridFloor.h">
       <Filter>System Header</Filter>
     </ClInclude>
-    <ClInclude Include="Game\ObjParts.h">
-      <Filter>Source</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Obj3D.h">
-      <Filter>Source</Filter>
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\ObjParts.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Camera.h">
+      <Filter>System Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\MyRobot.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\GameCamera.h">
+      <Filter>System Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Player.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -72,20 +81,29 @@
     <ClCompile Include="Game.cpp">
       <Filter>Framework Source</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>System Source</Filter>
-    </ClCompile>
     <ClCompile Include="DebugCamera.cpp">
       <Filter>System Source</Filter>
     </ClCompile>
     <ClCompile Include="GridFloor.cpp">
       <Filter>System Source</Filter>
     </ClCompile>
-    <ClCompile Include="Game\ObjParts.cpp">
-      <Filter>Header</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Obj3D.cpp">
-      <Filter>Header</Filter>
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\ObjParts.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Camera.cpp">
+      <Filter>System Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\MyRobot.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\GameCamera.cpp">
+      <Filter>System Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Player.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +122,18 @@
   <ItemGroup>
     <MeshContentTask Include="FBX\Vehecle.FBX">
       <Filter>Assets</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="FBX\Vehecle_Body.FBX">
+      <Filter>FBX</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="FBX\Vehecle_Canon.FBX">
+      <Filter>FBX</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="FBX\Vehecle_Engine.FBX">
+      <Filter>FBX</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="FBX\Plane.FBX">
+      <Filter>FBX</Filter>
     </MeshContentTask>
   </ItemGroup>
 </Project>

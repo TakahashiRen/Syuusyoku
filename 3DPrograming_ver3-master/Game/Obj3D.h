@@ -18,7 +18,7 @@ protected:
 	//ワールド行列
 	DirectX::SimpleMath::Matrix m_world;
 	//初期位置行列
-	DirectX::SimpleMath::Matrix m_initialPos;
+	DirectX::SimpleMath::Matrix m_initial;
 
 public:
 	Obj3D();
@@ -36,6 +36,11 @@ public:
 	void SetPosition(DirectX::SimpleMath::Vector3 position)		{ m_position = position; }
 	void SetRotation(DirectX::SimpleMath::Quaternion rotation)	{ m_rotaiton = rotation; }
 	void SetWorldMat(DirectX::SimpleMath::Matrix mat)			{ m_world = mat; }
-	void SetInitPos(DirectX::SimpleMath::Matrix pos)			{ m_initialPos = pos; }
+	void SetInitPos(DirectX::SimpleMath::Matrix pos)			{ m_initial = pos; }
+
+	DirectX::SimpleMath::Vector3 GetPosition() { return m_position; }
+	DirectX::SimpleMath::Quaternion GetRotation() { return m_rotaiton; }
+	DirectX::SimpleMath::Matrix GetWorldMat() { return m_world; }
+	DirectX::SimpleMath::Matrix GetInitPos() { return m_initial; }
 
 };

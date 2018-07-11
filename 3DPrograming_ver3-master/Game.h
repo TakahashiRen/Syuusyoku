@@ -7,7 +7,8 @@
 #include "DeviceResources.h"
 #include "StepTimer.h"
 
-#include "Game\Camera.h"
+#include "Game\GameCamera.h"
+#include "Game\Player.h"
 #include "DebugCamera.h"
 #include "GridFloor.h"
 
@@ -94,8 +95,13 @@ private:
 	DirectX::SimpleMath::Matrix m_projection;
 
 	//カメラ
-	std::unique_ptr<Camera> m_camera;
+	std::unique_ptr<GameCamera> m_camera;
 
-	//プレイヤー
-	std::unique_ptr<DirectX::Model> m_modelPlayer;
+	std::unique_ptr<DirectX::Model> m_modelPlane;
+	//パーツモデルデータ
+	std::unique_ptr<DirectX::Model> m_modelEngine;
+	std::unique_ptr<DirectX::Model> m_modelCanon;
+	std::unique_ptr<DirectX::Model> m_modelBody;
+
+	Player* m_player;
 };

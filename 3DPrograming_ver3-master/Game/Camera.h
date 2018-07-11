@@ -9,9 +9,10 @@ class Camera
 {
 //クラス変数
 public:
+	float angle;
 	// カメラの距離
 	static const float CAMERA_DISTANCE;
-private:
+protected:
 	//視点
 	DirectX::SimpleMath::Vector3 m_eyePos;
 	//参照点

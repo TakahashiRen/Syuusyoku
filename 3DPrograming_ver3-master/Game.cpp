@@ -35,9 +35,8 @@ void Game::Initialize(HWND window, int width, int height)
 	m_mouse->SetWindow(window);
 
 	// カメラの作成
-	//m_debugCamera = std::make_unique<DebugCamera>(width, height);
-	m_camera = std::make_unique<Camera>(width, height);
-	m_camera->Init(Vector3(0.0f,2.0f,-5.0f), Vector3(0.0f,0.0f,0.0f), Vector3(0.0f,1.0f,0.0f));
+	m_camera = std::make_unique<GameCamera>(width, height);
+	m_camera->Init(Vector3(0.0f,5.0f,-5.0f), Vector3(0.0f,0.0f,0.0f), Vector3(0.0f,1.0f,0.0f));
 
     m_deviceResources->SetWindow(window, width, height);
 
@@ -53,6 +52,8 @@ void Game::Initialize(HWND window, int width, int height)
     m_timer.SetFixedTimeStep(true);
     m_timer.SetTargetElapsedSeconds(1.0 / 60);
     */
+	m_player->Init(Vector3(0, 0, 0), 0);
+	m_player->Start();
 
 }
 
@@ -76,9 +77,9 @@ void Game::Update(DX::StepTimer const& timer)
     // TODO: Add your game logic here.
     elapsedTime;
 
+	m_player->Update(elapsedTime);
 	// デバッグカメラの更新
-	//m_debugCamera->Update();
-	m_camera->Update();
+	m_camera->DebugCamera();
 
 }
 #pragma endregion
@@ -103,7 +104,8 @@ void Game::Render()
 
 
 	// ここから描画処理を記述する
-	m_modelPlayer->Draw(context, *m_states.get(), m_world, m_view, m_projection);
+	m_modelPlane->Draw(context, *m_states.get(), Matrix::Identity, m_view, m_projection);
+	m_player->Render();
 
 	// ここまで
 
@@ -203,7 +205,17 @@ void Game::CreateDeviceDependentResources()
 	fx.SetDirectory(L"Resources\\Models");
 
 	//プレイヤーモデルの作成
-	m_modelPlayer = Model::CreateFromCMO(device, L"Resources\\Models\\Vehecle.cmo", fx);
+	m_modelPlane = Model::CreateFromCMO(device, L"Resources\\Models\\Plane.cmo",fx);
+
+	m_modelBody = Model::CreateFromCMO(device, L"Resources\\Models\\Vehecle_Body.cmo", fx);
+	m_modelCanon = Model::CreateFromCMO(device, L"Resources\\Models\\Vehecle_Canon.cmo", fx);
+	m_modelEngine = Model::CreateFromCMO(device, L"Resources\\Models\\Vehecle_Engine.cmo", fx);
+
+	m_player = new Player();
+	m_player->SetPartsModel(m_modelBody.get(), MyRobot::BODY);
+	m_player->SetPartsModel(m_modelCanon.get(), MyRobot::CANON);
+	m_player->SetPartsModel(m_modelEngine.get(), MyRobot::ENGINE);
+	m_player->SetGame(this);
 }
 
 // Allocate all memory resources that change on a window SizeChanged event.
@@ -244,7 +256,12 @@ void Game::OnDeviceLost()
 	m_font.reset();
 	
 	//プレイヤーモデルの解放
-	m_modelPlayer.reset();
+	m_modelBody.reset();
+	m_modelCanon.reset();
+	m_modelEngine.reset();
+	m_modelPlane.reset();
+	delete m_player;
+	m_player = nullptr;
 }
 
 void Game::OnDeviceRestored()

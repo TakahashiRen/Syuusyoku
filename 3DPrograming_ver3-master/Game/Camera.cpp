@@ -2,7 +2,7 @@
 //	ƒJƒƒ‰ƒNƒ‰ƒX‚ÌÀ‘•
 //	Camera.cpp
 //-------------------------------------------------------------
-#include "pch.h"
+#include "../pch.h"
 #include "Camera.h"
 
 using namespace DirectX;
@@ -44,6 +44,7 @@ void Camera::Init(DirectX::SimpleMath::Vector3 eyepos, DirectX::SimpleMath::Vect
 	m_eyePos = eyepos;
 	m_refPos = refpos;
 	m_upVec = upvec;
+	angle = 0;
 }
 
 //
