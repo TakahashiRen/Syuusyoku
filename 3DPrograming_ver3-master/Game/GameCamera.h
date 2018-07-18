@@ -11,6 +11,10 @@ public:
 	enum STATE{DEBUG,TITLE,GAME};
 private:
 	STATE m_state;
+	//ターゲットの位置
+	DirectX::SimpleMath::Vector3 m_targetPos;
+	//ターゲットの向いている方向
+	float m_targetDir;
 public:
 	//コンストラクタ
 	GameCamera();
@@ -25,4 +29,8 @@ public:
 	void PlayCamera();
 	//状態を変える
 	void ChangeState(STATE state) { m_state = state; }
+	
+	//ターゲットの設定
+	void SetTarget(DirectX::SimpleMath::Vector3 targetPos) { m_targetPos = targetPos; }
+	void SetTargetDir(float dir) { m_targetDir = dir; }
 };

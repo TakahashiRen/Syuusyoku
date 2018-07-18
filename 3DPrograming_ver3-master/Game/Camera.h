@@ -9,7 +9,7 @@ class Camera
 {
 //ƒNƒ‰ƒX•Ï”
 public:
-	float angle;
+	float m_angle;
 	// ƒJƒƒ‰‚Ì‹——£
 	static const float CAMERA_DISTANCE;
 protected:
@@ -42,6 +42,7 @@ public:
 	void SetEyepos(DirectX::SimpleMath::Vector3 eyepos);
 	void SetRefpos(DirectX::SimpleMath::Vector3 refpos);
 	void SetWindowSize(int width, int height);
+	void SetAngle(float angle);
 	//æ“¾ŠÖ”
 	DirectX::SimpleMath::Vector3 GetEyepos();
 	DirectX::SimpleMath::Vector3 GetRefpos();

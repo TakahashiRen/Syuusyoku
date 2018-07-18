@@ -55,6 +55,8 @@ void Game::Initialize(HWND window, int width, int height)
 	m_player->Init(Vector3(0, 0, 0), 0);
 	m_player->Start();
 
+	m_camera->SetTarget(m_player->GetPosition());
+	m_camera->SetTargetDir(m_player->GetDir());
 }
 
 #pragma region Frame Update
@@ -78,8 +80,10 @@ void Game::Update(DX::StepTimer const& timer)
     elapsedTime;
 
 	m_player->Update(elapsedTime);
+	m_camera->SetTarget(m_player->GetPosition());
+	m_camera->SetTargetDir(-m_player->GetDir());
 	// デバッグカメラの更新
-	m_camera->DebugCamera();
+	m_camera->PlayCamera();
 
 }
 #pragma endregion
@@ -104,7 +108,8 @@ void Game::Render()
 
 
 	// ここから描画処理を記述する
-	m_modelPlane->Draw(context, *m_states.get(), Matrix::Identity, m_view, m_projection);
+	//m_modelPlane->Draw(context, *m_states.get(), Matrix::Identity, m_view, m_projection);
+	m_modelStage->Draw(context, *m_states.get(), Matrix::Identity, m_view, m_projection);
 	m_player->Render();
 
 	// ここまで
@@ -206,7 +211,8 @@ void Game::CreateDeviceDependentResources()
 
 	//プレイヤーモデルの作成
 	m_modelPlane = Model::CreateFromCMO(device, L"Resources\\Models\\Plane.cmo",fx);
-
+	m_modelStage = Model::CreateFromCMO(device, L"Resources\\Models\\Stage.cmo", fx);
+	
 	m_modelBody = Model::CreateFromCMO(device, L"Resources\\Models\\Vehecle_Body.cmo", fx);
 	m_modelCanon = Model::CreateFromCMO(device, L"Resources\\Models\\Vehecle_Canon.cmo", fx);
 	m_modelEngine = Model::CreateFromCMO(device, L"Resources\\Models\\Vehecle_Engine.cmo", fx);

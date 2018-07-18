@@ -120,9 +120,6 @@
     </Manifest>
   </ItemGroup>
   <ItemGroup>
-    <MeshContentTask Include="FBX\Vehecle.FBX">
-      <Filter>Assets</Filter>
-    </MeshContentTask>
     <MeshContentTask Include="FBX\Vehecle_Body.FBX">
       <Filter>FBX</Filter>
     </MeshContentTask>
@@ -133,6 +130,12 @@
       <Filter>FBX</Filter>
     </MeshContentTask>
     <MeshContentTask Include="FBX\Plane.FBX">
+      <Filter>FBX</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="FBX\Vehecle.FBX">
+      <Filter>FBX</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="FBX\Stage.FBX">
       <Filter>FBX</Filter>
     </MeshContentTask>
   </ItemGroup>

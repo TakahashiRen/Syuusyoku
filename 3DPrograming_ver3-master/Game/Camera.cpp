@@ -44,7 +44,7 @@ void Camera::Init(DirectX::SimpleMath::Vector3 eyepos, DirectX::SimpleMath::Vect
 	m_eyePos = eyepos;
 	m_refPos = refpos;
 	m_upVec = upvec;
-	angle = 0;
+	m_angle = 0;
 }
 
 //
@@ -78,6 +78,11 @@ void Camera::SetWindowSize(int width, int height)
 {
 	m_scX = width;
 	m_scY = height;
+}
+
+void Camera::SetAngle(float angle)
+{
+	m_angle = angle;
 }
 
 //

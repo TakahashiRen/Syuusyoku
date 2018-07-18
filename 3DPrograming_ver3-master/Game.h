@@ -98,10 +98,11 @@ private:
 	std::unique_ptr<GameCamera> m_camera;
 
 	std::unique_ptr<DirectX::Model> m_modelPlane;
+	std::unique_ptr<DirectX::Model> m_modelStage;
 	//パーツモデルデータ
 	std::unique_ptr<DirectX::Model> m_modelEngine;
 	std::unique_ptr<DirectX::Model> m_modelCanon;
 	std::unique_ptr<DirectX::Model> m_modelBody;
 
-	Player* m_player;
+	Player * m_player;
 };
